@@ -1,0 +1,13 @@
+# Useful-Classes-in-Cpp
+
+BlockList.h中存放BlockList类及其内部类Block和iterator的声明和实现。其中Block为一维连续的存储空间，BlockList类维护了一个Block的双向链表，iterator为BlockList的迭代器，实现了随机迭代器的各种函数。由于BlockList的元素的地址不完全连续，所以将基础数据类型封装在struct Node中，同时当前的Node中还存储了指向上一个Node和下一个Node的指针，以此实现随机迭代器的功能。
+
+Fraction.h中存放分数类的声明和实现.
+
+Matrix.h中存放矩阵类的声明和实现。
+
+Matrix类为类模板，可以用整型和分数类(Fraction)实现（但事实上分数类已经可以兼容整型，但是方便起见还是使用模板可以直接使用系统的整型）。因为矩阵类中各种计算似乎都要用到分数，所以默认数据类型只支持整型和分数类。
+求逆矩阵时，不论是整型还是分数，返回的是一个分数矩阵。
+求矩阵范数时返回一个double。
+
+其余详细的说明见程序的注释。
